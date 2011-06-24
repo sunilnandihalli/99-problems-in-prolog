@@ -1,0 +1,9 @@
+qsort([],[]).
+qsort([X|Xs],O):-
+	divide(X,Xs,Left,Right),
+	qsort(Left,SortedLeft),
+	qsort(Right,SortedRight),
+	append([SortedLeft,[X],SortedRight],O).
+divide(_,[],[],[]).
+divide(X,[Y|Ys],[Y|Ls],Rs):-Y<X,divide(X,Ys,Ls,Rs).
+divide(X,[Y|Ys],Ls,[Y|Rs]):-Y>X,divide(X,Ys,Ls,Rs).

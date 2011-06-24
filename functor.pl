@@ -1,0 +1,1 @@
+nple(M,I,O):-O is M*I.
